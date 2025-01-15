@@ -1,0 +1,217 @@
+/* General Styles */
+* {
+    box-sizing: border-box;
+    /* Ensures padding and borders are included in element's total width and height */
+    font-family: Arial, sans-serif;
+    /* Sets a consistent font across the page */
+}
+
+body {
+    background-color: #0f3854;
+    /* Sets a dark background for the page */
+    color: #48dbfb;
+    /* Light blue text color */
+    display: flex;
+    justify-content: center;
+    /* Centers the clock horizontally */
+    align-items: center;
+    /* Centers the clock vertically */
+    min-height: 100vh;
+    /* Ensures the body takes full viewport height */
+    overflow: hidden;
+    /* Prevents any overflow */
+    margin: 0;
+    /* Removes default margin */
+}
+
+/* Clock Styling */
+.clock {
+    width: 400px;
+    /* Width of the clock */
+    height: 400px;
+    /* Height of the clock */
+    background-color: #341f97;
+    /* Purple background */
+    background: radial-gradient(ellipse at center, #0f3854 0%, #000000 70%);
+    /* Radial gradient for a 3D look */
+    border-radius: 50%;
+    /* Makes the clock round */
+    border: 12px solid #c8d6e5;
+    /* Light border around the clock */
+    position: relative;
+    /* Positions the clock elements relative to this container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Numbers on the Clock */
+.clock .num {
+    --rotation: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    /* Font size for the numbers */
+    transform: rotate(var(--rotation));
+    /* Rotates the numbers based on --rotation value */
+}
+
+/* Define the rotation for each number */
+.clock .num1 {
+    --rotation: 30deg;
+}
+
+.clock .num2 {
+    --rotation: 60deg;
+}
+
+.clock .num3 {
+    --rotation: 90deg;
+}
+
+.clock .num4 {
+    --rotation: 120deg;
+}
+
+.clock .num5 {
+    --rotation: 150deg;
+}
+
+.clock .num6 {
+    --rotation: 180deg;
+}
+
+.clock .num7 {
+    --rotation: 210deg;
+}
+
+.clock .num8 {
+    --rotation: 240deg;
+}
+
+.clock .num9 {
+    --rotation: 270deg;
+}
+
+.clock .num10 {
+    --rotation: 300deg;
+}
+
+.clock .num11 {
+    --rotation: 330deg;
+}
+
+/* Clock Hands */
+.clock .hand {
+    --rotation: 0;
+    position: absolute;
+    bottom: 50%;
+    /* Positions the hand at the center */
+    left: 50%;
+    /* Positions the hand at the center */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transform-origin: bottom;
+    /* The point of rotation is at the bottom */
+    z-index: 10;
+    transform: translate(-50%) rotate(calc(var(--rotation) * 1deg));
+    /* Rotates based on --rotation value */
+}
+
+/* Hour Hand */
+.clock .hand.hour {
+    background-color: #48dbfb;
+    /* Light blue */
+    width: 8px;
+    height: 30%;
+}
+
+/* Minute Hand */
+.clock .hand.min {
+    background-color: #48dbfb;
+    /* Light blue */
+    width: 6px;
+    height: 40%;
+}
+
+/* Second Hand */
+.clock .hand.sec {
+    background-color: #ee5253;
+    /* Red */
+    width: 4px;
+    height: 45%;
+}
+
+/* Center of the Clock */
+.clock::after {
+    content: "";
+    position: absolute;
+    background-color: #48dbfb;
+    /* Light blue */
+    z-index: 11;
+    width: 15px;
+    height: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Centers the circle */
+    border-radius: 50%;
+    /* Makes the center circular */
+}
+
+/* Responsiveness */
+@media (max-width: 600px) {
+    .clock {
+        width: 250px;
+        height: 250px;
+        /* Scales down the clock size for small screens */
+    }
+
+    .clock .num {
+        font-size: 1rem;
+        /* Reduces font size for numbers */
+    }
+}
+
+/* Hand Transition */
+.hand {
+    position: absolute;
+    background: black;
+    transform-origin: 50% 100%;
+    /* Rotates from the bottom center */
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%) rotate(90deg);
+    /* Initial rotation at 90 degrees */
+    transition: transform 0.05s cubic-bezier(0.4, 2.3, 0.3, 1);
+    /* Smooth transition for the hands */
+}
+
+/* Hour Hand Styling */
+.hour-hand {
+    width: 6px;
+    height: 75px;
+    z-index: 3;
+    background-color: #48dbfb;
+    /* Light blue for the hour hand */
+}
+
+/* Minute Hand Styling */
+.min-hand {
+    width: 4px;
+    height: 90px;
+    z-index: 2;
+    background-color: #48dbfb;
+    /* Light blue for the minute hand */
+}
+
+/* Second Hand Styling */
+.second-hand {
+    width: 2px;
+    height: 100px;
+    background: red;
+    /* Red for the second hand */
+    z-index: 1;
+}
