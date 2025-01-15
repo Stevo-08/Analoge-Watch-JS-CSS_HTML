@@ -10,6 +10,12 @@ This project demonstrates a fully functional analog clock built using **HTML**, 
 - **Radial Design**: The clock face includes radial gradient styling and hour markers, giving it a modern, polished appearance.
 - **Efficient Animation**: Rotation of the hands is handled using CSS transformations, minimizing performance overhead.
 
+### CSS
+- The **clock background** has been updated with a new radial gradient from a light blue to dark gray, providing a more modern and visually appealing look.
+- **Clock hands** now have smoother transitions with the addition of `transition` properties, ensuring fluid movement.
+- **Center dot** now has a more prominent size for a cleaner and more realistic pivot point.
+- **Responsive behavior** for small screens has been enhanced, adjusting the clock's size and font to fit better on mobile devices.
+
 ### Breakdown of Functionality
 1. **HTML Structure**:
    - The clock face is defined with a central `.clock` container.
