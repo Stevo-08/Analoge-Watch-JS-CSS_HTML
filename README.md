@@ -44,9 +44,3 @@ This project demonstrates a fully functional analog clock built using **HTML**, 
 1. Clone or download the repository from GitHub.
 2. Open the `index.html` file in any modern web browser.
 3. The analog clock will display the current time and update in real-time.
-
-## GitHub Repository
-[Visit the GitHub repository](https://github.com/Stevo-08/Analoge-Watch-JS-CSS_HTML)
-
-## License
-This project is licensed under the MIT License.
